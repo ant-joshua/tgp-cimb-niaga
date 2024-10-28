@@ -193,6 +193,18 @@
         display: flex;
         flex-direction: column;
       }
+      .flex-1 {
+        flex: 1;
+      }
+      .flex-2 {
+        flex: 2;
+      }
+      .flex-3 {
+        flex: 3;
+      }
+      .flex-4 {
+        flex: 4;
+      }
       .flex-row {
         display: flex;
         flex-direction: row;
@@ -229,8 +241,8 @@
       <!-- Section Biodata -->
       <section id="bioSection">
         <div class="flex-row">
-          <section id="bioFoto">Foto</section>
-          <section id="bioData" class="flex-column gap-20">
+          <section id="bioFoto" class="flex-1">Foto</section>
+          <section id="bioData" class="flex-3 flex-column gap-20">
             <h1>Antonius Joshua</h1>
             <p>Frontend Designer</p>
             <div>
