@@ -176,14 +176,29 @@
       main {
         width: 100%;
         background-color: lightblue;
+        height: 90vh;
         /* height: 800px; */
       }
 
       #bioSection {
-        width: 100%;
+        width: 1000px;
+        margin: 0 auto;
+        height: 50%;
+        background-color: white;
       }
 
       #formSection {
+      }
+      .flex-column {
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-row {
+        display: flex;
+        flex-direction: row;
+      }
+      .gap-20 {
+        gap: 20px;
       }
     </style>
   </head>
@@ -212,7 +227,20 @@
     </nav>
     <main>
       <!-- Section Biodata -->
-      <section id="bioSection"></section>
+      <section id="bioSection">
+        <div class="flex-row">
+          <section id="bioFoto">Foto</section>
+          <section id="bioData" class="flex-column gap-20">
+            <h1>Antonius Joshua</h1>
+            <p>Frontend Designer</p>
+            <div>
+              <button>Kontak</button>
+              <button>Resume</button>
+            </div>
+          </section>
+        </div>
+        <div></div>
+      </section>
 
       <!-- Section Form -->
       <section id="formSection"></section>
