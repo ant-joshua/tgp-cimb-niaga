@@ -132,25 +132,30 @@
       }
       nav {
         width: 100%;
-        padding: 20px 20px;
+
         background-color: antiquewhite;
         display: flex;
         justify-content: space-between;
         align-content: center;
       }
+
+      nav section {
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+      }
+
       #logo {
         flex: 1;
         align-self: center;
       }
-      #centerMenu {
-        flex: 2;
-        align-self: center;
-        /* display: flex;
-        justify-content: center; */
-      }
+
       #rightMenu {
         flex: 1;
         display: flex;
+        justify-content: flex-end;
         flex-direction: row;
         gap: 5px;
       }
@@ -163,30 +168,54 @@
         border: 1px solid black;
         border-radius: 5px;
       }
+      #rightMenu button:hover {
+        background-color: black;
+        color: white;
+      }
+
+      main {
+        width: 100%;
+        background-color: lightblue;
+        /* height: 800px; */
+      }
+
+      #bioSection {
+        width: 100%;
+      }
+
+      #formSection {
+      }
     </style>
   </head>
   <body>
     <nav>
-      <!-- Logo -->
-      <div id="logo">Logo</div>
-      <div id="centerMenu">
-        <div>Center Menu</div>
-      </div>
-      <!-- Right Menu -->
-      <div id="rightMenu">
-        <a href="index.html">
-          <button>Home</button>
-        </a>
-        <a href="index.html">
-          <button>Product</button>
-        </a>
-        <a href="index.html">
-          <button>Gallery</button>
-        </a>
-        <a href="index.html">
-          <button>Blog</button>
-        </a>
-      </div>
+      <section>
+        <!-- Logo -->
+        <div id="logo">Logo</div>
+
+        <!-- Right Menu -->
+        <div id="rightMenu">
+          <a href="index.html">
+            <button>Home</button>
+          </a>
+          <a href="index.html">
+            <button>Product</button>
+          </a>
+          <a href="index.html">
+            <button>Gallery</button>
+          </a>
+          <a href="index.html">
+            <button>Blog</button>
+          </a>
+        </div>
+      </section>
     </nav>
+    <main>
+      <!-- Section Biodata -->
+      <section id="bioSection"></section>
+
+      <!-- Section Form -->
+      <section id="formSection"></section>
+    </main>
   </body>
 </html>
