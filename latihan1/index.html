@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <!-- Tempat meta tag , title , external css, internal & initial load js -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Deskripsi website kita" />
+    <meta name="keywords" content="Tokopedia, Mulai aja dulu, " />
+    <title>Nama website kita</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Tempat internal css */
+    </style>
+  </head>
+
+  <body>
+    <!-- Headings -->
+    <h1>Nama saya Antonius Joshua</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <!-- Parapgrahp -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores
+      cumque dolor in iusto, enim ab libero rem assumenda cum, expedita est
+      quaerat, adipisci esse modi rerum quisquam magnam quia?
+    </p>
+    <!-- anchor -->
+    <!-- External Website -->
+    <a href="https://google.com" target="_blank">Google >(ABC)</a>
+    <div>
+      <!-- Internal Website -->
+      <a href="about.html">About <span style="color: yellow">US</span></a>
+      <!-- bold (inline) -->
+      <b>ini bold</b>
+      <!-- italic (inline) -->
+      <i> ini italic </i>
+      <!-- bold (inline)-->
+      <strong></strong>
+      <!-- Underline (inline) -->
+      <u>ini underline</u>
+      <!-- Strikethrough (inline) -->
+      <del>ini strikethrough</del>
+    </div>
+    <!-- Unordered list (bulletin) -->
+    <h1>Daftar Hobby</h1>
+    <ul>
+      <!-- List Item -->
+      <li>Makan</li>
+      <ul>
+        <li>Soto</li>
+        <li>Nasi goreng</li>
+        <ul>
+          <li>Kambing</li>
+          <li>Seafood</li>
+        </ul>
+      </ul>
+    </ul>
+    <!-- Ordered list (numbering) -->
+    <h1>Daftar Kegiatan</h1>
+    <ol type="I">
+      <li>Bangun Pagi</li>
+      <li>Mandi</li>
+      <li>Gosok gigi</li>
+      <li>Merapihkan Tempat Tidur</li>
+    </ol>
+    <img
+      src="https://images.pexels.com/photos/27893233/pexels-photo-27893233/free-photo-of-woman-in-shirt-photographing-with-digital-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      width="200"
+      alt="Wartawan"
+    />
+    <!-- Table -->
+    <table border="1">
+      <caption>
+        Daftar Nilai Siswa
+      </caption>
+      <!-- Header TR = Table Row -->
+      <thead>
+        <tr>
+          <th rowspan="2">No</th>
+          <th colspan="2">Nama Lengkap</th>
+          <th rowspan="2">Nilai</th>
+        </tr>
+        <tr>
+          <!-- TD =  Table Data -->
+          <!-- <th>No</th> -->
+          <th>Nama Depan</th>
+          <th>Nama Belakang</th>
+          <!-- <th>Nilai</th> -->
+        </tr>
+      </thead>
+      <!-- Body -->
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Antonius</td>
+          <td>Joshua</td>
+          <td>100</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Nilai Rata2</td>
+          <td>100</td>
+        </tr>
+      </tfoot>
+    </table>
+    <!-- Form -->
+    <section>
+      <h1>Form Pendaftaran Siswa</h1>
+      <form action="index.html" method="post" onsubmit="">
+        <section>
+          <label for="nama">Nama</label>
+          <div>
+            <input type="text" id="nama" required name="nama" />
+          </div>
+        </section>
+        <section>
+          <label for="email">Email</label>
+          <div>
+            <input type="email" id="email" required name="email" />
+          </div>
+        </section>
+        <div>
+          <label for="password">Password </label>
+          <input type="password" id="password" required name="password" />
+        </div>
+        <div>
+          <label for="umur">Umur</label>
+          <input type="number" id="umur" name="umur" />
+        </div>
+        <div>
+          <label for="tanggal_lahir">Tanggal Lahir</label>
+          <input type="date" id="tanggal_lahir" name="tanggal_lahir" />
+        </div>
+        <div>
+          <label for="alamat">Alamat</label>
+          <textarea id="alamat" name="alamat"></textarea>
+        </div>
+        <div>
+          <label>Pendidikan Terakhir</label>
+          <select>
+            <option value="SD">SD</option>
+            <option value="SMP">SMP</option>
+            <option value="SMA">SMA</option>
+          </select>
+        </div>
+        <div>
+          <label>Jenis Kelamin</label>
+          <div>
+            <input type="radio" name="jenis_kelamin" value="Laki-laki" />
+            Laki-laki
+            <input type="radio" name="jenis_kelamin" value="Perempuan" />
+            Perempuan
+          </div>
+        </div>
+        <div>
+          <label for="syarat_ketentuan">Syarat dan Ketentuan</label>
+          <input
+            type="checkbox"
+            name="syarat_ketentuan"
+            id="syarat_ketentuan"
+          />
+        </div>
+        <div>
+          <label>File</label>
+          <div>
+            <input type="file" name="file" id="file" />
+          </div>
+        </div>
+        <div>
+          <label>Warna Favorit</label>
+          <div>
+            <input type="color" name="warna" id="warna" />
+          </div>
+        </div>
+        <div>
+          <label>Nomor HP</label>
+          <input type="tel" name="nomor_hp" id="nomor_hp" />
+        </div>
+        <div>
+          <!-- Cara Pertama -->
+          <input type="submit" value="Kirim" />
+          <!-- Cara Kedua -->
+          <button type="submit">Kirim</button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
