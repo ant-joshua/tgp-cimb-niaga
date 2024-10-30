@@ -8,6 +8,7 @@ const anggotaList = [
 function renderAnggota() {
   const anggotaListElement = document.getElementById("anggotaList");
 
+  var selectedIndex = 0;
   let row = "";
   anggotaList.forEach((value, index) => {
     row += `<tr>
@@ -17,6 +18,9 @@ function renderAnggota() {
                 <button onclick="deleteAnggota(${index})">
                 Hapus
                 </button>
+                <button onclick="updateAnggota(${index})">
+                Edit
+                </button>
             </td>
         </tr>`;
   });
@@ -24,23 +28,43 @@ function renderAnggota() {
   anggotaListElement.innerHTML = row;
 }
 
+function updateAnggota(index) {
+  const submitBtn = document.getElementById("submitBtn");
+  const inputName = document.getElementById("inputName");
+  const inputSimpanan = document.getElementById("inputSimpanan");
+
+  inputName.value = anggotaList[index].name;
+  inputSimpanan.value = anggotaList[index].simpanan;
+  submitBtn.value = "isUpdate";
+  submitBtn.innerText = "Update";
+  selectedIndex = index;
+}
+
 function addAnggota() {
+  const submitBtn = document.getElementById("submitBtn");
   const inputName = document.getElementById("inputName");
   const inputSimpanan = document.getElementById("inputSimpanan");
 
   const nameValue = inputName.value;
   const simpananValue = inputSimpanan.value;
 
-  if (!nameValue || !simpananValue || simpananValue != "") {
-    alert("Tolong isi nama dan simpanannnya");
-    return;
+  //   if (!nameValue || !simpananValue || simpananValue != "") {
+  //     alert("Tolong isi nama dan simpanannnya");
+  //     return;
+  //   }
+
+  if (submitBtn.value == "isUpdate") {
+    anggotaList[selectedIndex].name = inputName.value;
+    anggotaList[selectedIndex].simpanan = inputSimpanan.value;
+  } else {
+    anggotaList.push({
+      name: nameValue,
+      simpanan: simpananValue,
+    });
   }
 
-  anggotaList.push({
-    name: nameValue,
-    simpanan: simpananValue,
-  });
-
+  submitBtn.value = "isNormal";
+  submitBtn.innerText = "Simpan";
   renderAnggota();
 }
 
