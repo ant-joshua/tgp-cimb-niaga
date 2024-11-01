@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="toggleImage()">Toggle</button>
+
+    <img
+      id="coffeImage"
+      src="https://images.pexels.com/photos/7994278/pexels-photo-7994278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    />
+
+    <h1 id="displayName"></h1>
+    <h1 id="displayEdu"></h1>
+    <h1 id="displayGender"></h1>
+    <form id="submitForm">
+      <div>
+        <label>Name</label>
+        <input type="text" id="inputName" name="name" />
+      </div>
+      <div>
+        <label>Pendidikan</label>
+        <select id="selectEdu" name="education">
+          <option value="sd">SD</option>
+          <option value="smp">SMP</option>
+          <option value="sma">SMA</option>
+        </select>
+      </div>
+      <div>
+        <label>Gender</label>
+        <div>
+          <div>
+            <input type="radio" name="gender" value="male" />
+            <label>Male</label>
+          </div>
+          <div>
+            <input type="radio" name="gender" value="female" />
+            <label>Female</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script type="text/javascript" src="js/script.js" />
+  </body>
+</html>
