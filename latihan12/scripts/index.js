@@ -32,26 +32,26 @@ function filterOddES6() {
   return numbers.filter((number) => number % 2 !== 0);
 }
 
+const studentList = [
+  {
+    id: 1,
+    name: "John Doe",
+    score: 90,
+  },
+  {
+    id: 2,
+    name: "Jane Doe",
+    score: 95,
+  },
+  {
+    id: 3,
+    name: "Michael Doe",
+    score: 98,
+  },
+];
+
 // Find ES6
 function findStudent(id) {
-  const studentList = [
-    {
-      id: 1,
-      name: "John Doe",
-      score: 90,
-    },
-    {
-      id: 2,
-      name: "Jane Doe",
-      score: 95,
-    },
-    {
-      id: 3,
-      name: "Michael Doe",
-      score: 98,
-    },
-  ];
-
   return studentList.find((student) => student.id === id);
 }
 
@@ -63,3 +63,9 @@ function findStudent(id) {
       score: 90,
     },
  */
+
+function findStudentIndex(id) {
+  return studentList.findIndex((student) => student.id === id);
+}
+
+console.log(findStudentIndex(3));
