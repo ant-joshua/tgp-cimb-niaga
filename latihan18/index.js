@@ -119,3 +119,10 @@ fetchStudentById(1)
   .catch((error) => {
     console.log(error);
   });
+async function fetchStudentByName(name) {
+  let student = studentList.find((student) => student.name === name);
+  if (student) {
+    return Promise.resolve(student);
+  }
+  return Promise.reject("Student not found");
+}
