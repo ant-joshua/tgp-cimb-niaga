@@ -45,4 +45,20 @@ async function fetchStudentById(id) {
   });
 }
 
-async function main() {}
+async function main() {
+  fetchStudentById(1)
+    .then((student) => {
+      fetchStudentPaymentById(student.id)
+        .then((studentPayment) => {
+          console.log(studentPayment);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+main();
