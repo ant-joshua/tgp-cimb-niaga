@@ -48,8 +48,14 @@
           row += `
             <tr>
                 <td>${todo.id}</td>
-                <td>${todo.name}</td>
-                <td>${todo.isDone ? "Done" : "Not Done"}</td>
+                <td class=${
+                  todo.isDone ? "text-decoration-line-through" : ""
+                }>${todo.name}</td>
+                <td>
+                    <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" ${
+                      todo.isDone ? "checked" : null
+                    } onclick="checkTodo(${index})">
+                </td>
                 <td>
                     <button class="btn btn-danger" onclick="deleteTodo(${index})">Delete</button>
                 </td>
@@ -57,6 +63,14 @@
           `;
         });
         todoListData.innerHTML = row;
+      }
+
+      function checkTodo(index) {
+        todoList[index].isDone = !todoList[index].isDone;
+
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+
+        renderTodo();
       }
 
       function deleteTodo(index) {
