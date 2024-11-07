@@ -15,7 +15,17 @@
     <h1>Testing</h1>
 
     <div class="container">
-      <button class="btn btn-primary mb-3" onclick="addTodo()">Add Todo</button>
+      <form onsubmit="addTodo(event)">
+        <input
+          type="text"
+          id="todoName"
+          class="form-control mb-3"
+          placeholder="Todo Name"
+        />
+
+        <button class="btn btn-primary mb-3" type="submit">Add Todo</button>
+      </form>
+
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -83,10 +93,19 @@
 
       renderTodo();
 
-      function addTodo() {
+      function addTodo(event) {
+        event.preventDefault();
+
+        const todoName = document.getElementById("todoName").value;
+
+        if (!todoName) {
+          alert("Todo Name is required");
+          return;
+        }
+
         const todo = {
-          id: 2,
-          name: "Belajar CSS",
+          id: todoList.length + 1,
+          name: todoName,
           isDone: false,
         };
 
