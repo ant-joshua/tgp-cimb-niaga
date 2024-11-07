@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Testing</h1>
+
+    <button onclick="addTodo()"></button>
+
+    <script>
+      localStorage.setItem("name", "John Doe");
+
+      const todoList = [
+        {
+          id: 1,
+          name: "Belajar HTML",
+          isDone: false,
+        },
+      ];
+
+      function addTodo() {
+        const todo = {
+          id: 2,
+          name: "Belajar CSS",
+          isDone: false,
+        };
+
+        todoList.push(todo);
+
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+      }
+    </script>
+  </body>
+</html>
