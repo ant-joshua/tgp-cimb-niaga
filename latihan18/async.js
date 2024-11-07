@@ -45,7 +45,7 @@ async function fetchStudentById(id) {
   });
 }
 
-async function main() {
+async function exampleCallbackHell() {
   fetchStudentById(1)
     .then((student) => {
       fetchStudentPaymentById(student.id)
@@ -59,6 +59,12 @@ async function main() {
     .catch((error) => {
       console.log(error);
     });
+}
+
+async function main() {
+  const getStudent = await fetchStudentById(1);
+  const getStudentPayment = await fetchStudentPaymentById(getStudent.id);
+  console.log(getStudentPayment);
 }
 
 main();
