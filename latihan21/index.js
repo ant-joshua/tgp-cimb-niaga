@@ -19,6 +19,7 @@ async function fetchPokemonApi() {
   let row = "";
   data.results.forEach((pokemon) => {
     const getPokemonId = pokemon.url.split("/")[6];
+
     const paddedId = getPokemonId.padStart(3, "0");
 
     const newPokemonImage = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
@@ -26,17 +27,40 @@ async function fetchPokemonApi() {
     row += `
       <div class="col-md-3">
         <div class="card" style="min-height:500px;">
-          <img src="${newPokemonImage}" class="card-img-top"  alt="..." />
+          <img src="${newPokemonImage}" id="pokemonImage${getPokemonId}" class="card-img-top"  alt="..." />
           <div class="card-body">
             <h5 class="card-title">${pokemon.name}</h5>
-            <p class="card-text">Deskripsi Pokemon</p>
+            <p class="card-text" id="pokemonDetail${getPokemonId}"></p>
           </div>
         </div>
       </div>
       `;
+
+    getPokemonDetail(pokemon.url);
   });
 
   pokemonList.innerHTML = row;
+}
+
+async function getPokemonDetail(url) {
+  const response = await fetch(url);
+
+  const data = await response.json();
+
+  const pokemonImage = document.querySelector("#pokemonImage" + data.id);
+
+  pokemonImage.src = data.sprites.other["official-artwork"].front_default;
+
+  const pokemonDetail = document.querySelector("#pokemonDetail" + data.id);
+
+  pokemonDetail.innerHTML = `
+    <b>Height:</b> ${data.height} <br>
+    <b>Weight:</b> ${data.weight} <br>
+    <b>Base Experience:</b> ${data.base_experience} <br>
+    <b>Abilities:</b> ${data.abilities
+      .map((ability) => ability.ability.name)
+      .join(", ")} <br>
+  `;
 }
 
 fetchPokemonApi();
