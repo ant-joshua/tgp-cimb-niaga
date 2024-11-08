@@ -11,7 +11,7 @@
 
 async function fetchPokemonApi() {
   const response = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
+    "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0"
   );
   const data = await response.json();
 
@@ -19,12 +19,14 @@ async function fetchPokemonApi() {
   let row = "";
   data.results.forEach((pokemon) => {
     const getPokemonId = pokemon.url.split("/")[6];
+    const paddedId = getPokemonId.padStart(3, "0");
 
-    const pokemonImage = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${getPokemonId}.svg`;
+    const newPokemonImage = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
+
     row += `
       <div class="col-md-3">
         <div class="card" style="min-height:500px;">
-          <img src="${pokemonImage}" class="card-img-top"  alt="..." />
+          <img src="${newPokemonImage}" class="card-img-top"  alt="..." />
           <div class="card-body">
             <h5 class="card-title">${pokemon.name}</h5>
             <p class="card-text">Deskripsi Pokemon</p>
