@@ -15,7 +15,28 @@ async function fetchPokemonApi() {
   );
   const data = await response.json();
 
-  console.log(data);
+  console.log(data.results);
+  const pokemonList = document.querySelector("#pokemonList");
+
+  let row = "";
+
+  data.results.forEach((pokemon) => {
+    const getPokemonId = pokemon.url.split("/")[6];
+    console.log(getPokemonId);
+
+    const pokemonImage = `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${getPokemonId}.svg`;
+
+    row += `
+    <div class="card">
+          <img src="${pokemonImage}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">${pokemon.name}</h5>
+            <p class="card-text">Deskripsi Pokemon</p>
+          </div>
+        </div>`;
+  });
+
+  pokemonList.innerHTML = row;
 }
 
 fetchPokemonApi();
